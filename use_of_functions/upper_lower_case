@@ -1,0 +1,15 @@
+def string_count(str):
+    d={"count1":0, "count2":0}
+    for c in str:
+        if c.isupper():
+           d["count1"]+=1
+        elif c.islower():
+           d["count2"]+=1
+        else:
+           pass
+    print ("String is : ", str)
+    print ("No. of Upper case characters : ", d["count1"])
+    print ("No. of Lower case Characters : ", d["count2"])
+
+string_count('Tjis is Udaipur in 2020. THis is The Best Place to live INN')
+
