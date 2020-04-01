@@ -1,0 +1,33 @@
+#creating user degined exception
+class NegativeValueError(Exception):
+    'to define -ve value Error'
+    def __init__(self, msg):
+        Exception.__init__(self, msg)
+        self.msg = msg
+    def __str__(self):
+        return self.msg    
+
+def getfullname(first, middle, last):
+    'to get full name'
+    if first.isalpha() and middle.isalpha() and last.isalpha():
+        return first+" "+middle+" "+last
+    else:
+        v = ValueError("Invalid name type") 
+        raise v   
+
+def getbill(units, rate):
+    'to get bill amt'
+    if units>=0 and rate>=0:
+        bill = units*rate*1.1
+        return bill
+    else:
+        nve = NegativeValueError("negative values not excepted")
+        raise nve    
+
+try:
+    getfullname("mohan","lal","talesra")
+    amt = getbill(400, 5.5)
+    print("pay bill : 0.2f rs" %amt)
+except Exception as ex:
+    print(type(ex), " : ",ex) 
+
