@@ -1,0 +1,30 @@
+#creating a dict to store marks
+stinfo = {}# this is a blank dictionary
+for i in range(3):
+    rn = int(input("Enter Roll no."))
+    sn = input("Enter st name:")
+    sm = float(input("Enter st marks:"))
+    #adding into dict
+    stinfo[rn] = (sn , sm)
+else:
+    print(stinfo)    
+#def getmarks(rn):
+    'to find marks by rn'
+    if rn in stinfo:
+        print( stinfo[rn])
+    else:
+        print("%d not avaliable" %rn)       
+getmarks(rn = int(input( ("enter the rn whoes marks u need to find:"))))
+
+def getdivision ():
+    count =0 
+    for rn in stinfo:
+        if stinfo[rn][1] >=60:
+            count +=1
+    else :
+        print(count)        
+getdivision()
+def maxmarks():
+    print(max(stinfo.values()))
+maxmarks()
+    
